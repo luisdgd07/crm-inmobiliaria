@@ -9,16 +9,14 @@
                 <div class="text--primary">
                     Correo: {{profile.email}}
                 </div>
-                <div v-if="profile.rol_id ==2">
-                    <div class="text--primary">
-                        Telefono:{{profile.phone}}
-                    </div>
-                    <div class="text--primary">
-                        Provincia: {{profile.pronvince}}
-                    </div>
-                    <div class="text--primary">
-                        Dirección: {{profile.direction}}
-                    </div>
+                <div class="text--primary">
+                    Telefono:{{profile.phone}}
+                </div>
+                <div class="text--primary">
+                    Provincia: {{profile.pronvince}}
+                </div>
+                <div class="text--primary">
+                    Dirección: {{profile.direction}}
                 </div>
 
             </v-card-text>
@@ -48,13 +46,13 @@
                                     <v-flex xs6>
                                         <v-text-field label="Correo*" v-model="email_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs6 v-if="profile.rol_id ==2">
+                                    <v-flex xs6>
                                         <v-text-field label="Teléfono*" v-model="phone_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs6 v-if="profile.rol_id ==2">
+                                    <v-flex xs6>
                                         <v-text-field label="Provincia*" v-model="province_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs12 v-if="profile.rol_id ==2">
+                                    <v-flex xs12>
                                         <v-text-field label="Dirección*" v-model="direction_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
@@ -77,7 +75,7 @@
                 <v-dialog v-model="dialogpass" persistent max-width="600px">
                     <v-card>
                         <v-card-title>
-                            <span class="headline">Editar Usuario</span>
+                            <span class="headline">Editar Contraseña</span>
                         </v-card-title>
                         <v-card-text>
                             <v-container grid-list-md>
@@ -139,10 +137,11 @@ export default {
             this.direction_edit = direction;
         },
         edit_model() {
-            if (this.profile.rol_id == 2 && this.phone_edit == '' || this.province_edit == '' || this.direction_edit == '') {
-                this.error = 'Complete todos los campos';
-            } else if (this.email_edit == '' || this.name_edit == '') {
-                this.error = 'Complete todos los campos';
+            if (this.email_edit == '' || this.name_edit == '' || this.phone_edit == '' || this.province_edit == '' || this.direction_edit == '') {
+                this.$swal({
+                    title: 'Complete todos los campos',
+                    type: 'warning'
+                });
             } else {
                 axios.post("/api-user", {
                     name: this.name_edit,
@@ -159,8 +158,19 @@ export default {
                         this.province_edit = '';
                         this.direction_edit = '';
                         this.dialogedit = false;
+                        this.$swal('Usuario editado con exito', '', 'OK');
+                    } else {
+                        this.$swal({
+                            title: 'Error al editar usuario',
+                            type: 'warning'
+                        });
                     }
-                }).catch(this.error = 'Error al editar, email repetido');
+                }).catch((e) => {
+                    this.$swal({
+                        title: 'Error al editar usuario, correo en uso',
+                        type: 'warning'
+                    });
+                });
             }
 
         },
@@ -171,13 +181,24 @@ export default {
             let pass1 = this.passnew;
             let pass2 = this.cpassnew;
             if (pass1 != pass2) {
-                this.error_edit = 'Las contraseñas no coinciden';
+                this.$swal({
+                    title: 'Las contraseña no coinciden',
+                    type: 'warning'
+                });
             } else {
                 axios.post("/api-password", {
                     password: this.passnew
                 }).then((response) => {
                     if (response.status == 200) {
                         this.dialogpass = false;
+                        this.cpassnew = '';
+                        this.passnew = '';
+                        this.$swal('Contraseña editada con exito', '', 'OK');
+                    } else {
+                        this.$swal({
+                            title: 'error al cambiar contraseña',
+                            type: 'warning'
+                        });
                     }
                 });
             }

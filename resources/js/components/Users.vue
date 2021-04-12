@@ -192,13 +192,13 @@
                                     <v-flex xs12 sm6 md6>
                                         <v-text-field label="Correo" v-model="email_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs12 sm6 md6 v-if="rol_id_edit==2">
+                                    <v-flex xs12 sm6 md6 >
                                         <v-text-field label="Telefono" v-model="phone_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs12 sm6 md6 v-if="rol_id_edit==2">
+                                    <v-flex xs12 sm6 md6 >
                                         <v-text-field label="Provincia" v-model="province_edit" required></v-text-field>
                                     </v-flex>
-                                    <v-flex xs12 sm6 md6 v-if="rol_id_edit==2">
+                                    <v-flex xs12 sm6 md6>
                                         <v-text-field label="Dirección" v-model="direction_edit" required></v-text-field>
                                     </v-flex>
 
@@ -303,11 +303,6 @@ export default {
         },
         create() {
             if (this.rol_id != 0 || this.email != '' || this.name != '') {
-                if (this.rol_id == 1 || this.rol_id == 3) {
-                    this.phone = "";
-                    this.province = "";
-                    this.direction = "";
-                }
                 axios.post("/api-users", {
                     name: this.name,
                     email: this.email,
