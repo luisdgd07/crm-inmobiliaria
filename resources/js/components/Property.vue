@@ -26,7 +26,7 @@
                         <v-chip color="#38c172" text-color="#fff" class="mb-2 mr-3">
                             {{property.price}} USD
                         </v-chip>
-                        
+
                         <v-card
                             class="mx-auto"
                             max-width="344"
@@ -50,13 +50,13 @@
                                     <v-icon color="primary accent-4">
                                         mdi-phone-outline
                                     </v-icon>
-                                   <span>+11 22 33 456</span> 
+                                   <span>+11 22 33 456</span>
                                 </div>
                                 <div text class="primary--text">
                                     <v-icon color="primary accent-4">
                                         mdi-email-outline
                                     </v-icon>
-                                   <span>mail@mail.com</span> 
+                                   <span>mail@mail.com</span>
                                 </div>
                             </v-list-item-content>
 
@@ -70,7 +70,7 @@
                                         cols=12
                                         class="py-0"
                                     >
-                                    <v-text-field
+                                    <v-text-field outlined shaped clearable
                                         v-model="firstname"
                                         :rules="nameRules"
                                         :counter="10"
@@ -83,7 +83,7 @@
                                         cols=12
                                         class="py-0"
                                     >
-                                    <v-text-field
+                                    <v-text-field outlined shaped clearable
                                         v-model="email"
                                         :rules="emailRules"
                                         label="E-mail"
@@ -95,7 +95,7 @@
                                         cols=12
                                         class="py-0"
                                     >
-                                    <v-text-field
+                                    <v-text-field outlined shaped clearable
                                         v-model="phone"
                                         :rules="phoneRules"
                                         :counter="10"
@@ -103,7 +103,7 @@
                                         required
                                     ></v-text-field>
                                     </v-col>
-                                    
+
                                     <v-col
                                         cols=12
                                         class="py-0"
@@ -114,7 +114,7 @@
                                     color="teal"
                                     ></v-textarea>
                                     </v-col>
-                                    
+
                                     <v-btn
                                         outlined
                                         rounded
@@ -127,10 +127,10 @@
                                 </v-row>
                             </v-container>
                             </v-form>
-                            
+
                             </v-card-actions>
                         </v-card>
-                        
+
                     </v-card-text>
             </v-col>
         </v-card>

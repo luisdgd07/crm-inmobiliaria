@@ -32,7 +32,7 @@
             </v-col>
             <v-col class="d-flex" cols="12" sm="6">
 
-                <v-text-field label="Buscar propiedades" v-model="search"></v-text-field>
+                <v-text-field  clearable label="Buscar propiedades" v-model="search"></v-text-field>
             </v-col>
             <v-col class="d-flex" cols="12" sm="2">
 

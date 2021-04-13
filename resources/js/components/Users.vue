@@ -13,29 +13,32 @@
                                     <v-container grid-list-md>
                                         <v-layout wrap>
                                             <v-flex xs12 sm6 md6>
-                                                <v-text-field label="Nombre*" v-model="name" required></v-text-field>
+                                                <v-text-field :rules="[() => !!name || 'Este campo es requerido']" outlined shaped clearable label="Nombre*" v-model="name" required></v-text-field>
                                             </v-flex>
                                             <v-flex xs12 sm6 md6>
-                                                <v-text-field label="Correo*" v-model="email" required></v-text-field>
+                                                <v-text-field :rules="[() => !!email || 'Este campo es requerido']" outlined shaped clearable label="Correo*" v-model="email" required></v-text-field>
                                             </v-flex>
-                                            <v-flex xs12 sm6 md6 v-if="rol_id==2">
-                                                <v-text-field label="Telefono" v-model="phone" required></v-text-field>
+                                            <v-flex xs12 sm6 md6 >
+                                                <v-text-field :rules="[() => !!phone || 'Este campo es requerido']" outlined shaped clearable label="Telefono" v-model="phone" required></v-text-field>
                                             </v-flex>
-                                            <v-flex xs12 sm6 md6 v-if="rol_id==2">
-                                                <v-text-field label="Provincia" v-model="province" required></v-text-field>
+                                            <v-flex xs12 sm6 md6 >
+                                                <v-text-field :rules="[() => !!province || 'Este campo es requerido']" outlined shaped clearable label="Provincia" v-model="province" required></v-text-field>
                                             </v-flex>
-                                            <v-flex xs12 sm6 md6 v-if="rol_id==2">
-                                                <v-text-field label="Dirección" v-model="direction" required></v-text-field>
+                                            <v-flex xs12 sm6 md6 >
+                                                <v-text-field :rules="[() => !!name || 'Este campo es requerido']" outlined shaped clearable label="Dirección" v-model="direction" required></v-text-field>
                                             </v-flex>
 
                                             <v-flex xs12 sm6 md6>
-                                                <select class="form-control mt-2" placeholder="Estado" v-model="rol_id">
-                                                    <option selected disabled>Rol de Usuario*
-                                                    </option>
-                                                    <option v-for="item in roles" :value="item.id">
-                                                        {{ item.rol }}
-                                                    </option>
-                                                </select>
+                                                <v-select
+                                                v-model="rol_id"
+                                                outlined shaped
+                                                :items="roles"
+
+                                                item-text="rol"
+                                                item-value="id"
+                                                label="Rol*"
+                                                required
+                                              ></v-select>
                                             </v-flex>
                                             <v-flex xs12>
                                                 {{error}}
@@ -75,7 +78,7 @@
                             <v-card-title class="display-1 mt-2" color="blue">Administradores</v-card-title>
                             <v-data-table no-results-text="No hay resultados" no-data-text="No hay Usuarios" :headers="headers" :items="admins" class="elevation-1" :search="search">
                                 <template v-slot:top>
-                                    <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+                                    <v-text-field  clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
                                 </template>
                                 <template>
                                     <tr>
@@ -108,7 +111,7 @@
                         <v-card-title class="display-1 text-white my-2">Agentes</v-card-title>
                         <v-data-table no-data-text="No hay Usuarios" no-results-text="No hay resultados" :headers="headers" :items="agents" class="elevation-1" :search="search">
                             <template v-slot:top>
-                                <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+                                <v-text-field  clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
                             </template>
                             <template>
                                 <tr>
@@ -141,7 +144,7 @@
                         <v-card-title class="display-1 text-white">Usuarios</v-card-title>
                         <v-data-table no-data-text="No hay Usuarios" no-results-text="No hay resultados" :headers="usersheader" :items="users" class="elevation-1" :search="search">
                             <template v-slot:top>
-                                <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+                                <v-text-field clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
                             </template>
                             <template>
                                 <tr>
@@ -187,29 +190,30 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Nombre" v-model="name_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Nombre" v-model="name_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Correo" v-model="email_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Correo" v-model="email_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6 >
-                                        <v-text-field label="Telefono" v-model="phone_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Telefono" v-model="phone_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6 >
-                                        <v-text-field label="Provincia" v-model="province_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Provincia" v-model="province_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Dirección" v-model="direction_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dirección" v-model="direction_edit" required></v-text-field>
                                     </v-flex>
 
                                     <v-flex xs12 sm6 md6>
-                                        <select class="form-control mt-2" placeholder="Estado" v-model="rol_id_edit">
-                                            <option selected disabled>Moneda
-                                            </option>
-                                            <option v-for="item in roles" :value="item.id">
-                                                {{ item.rol }}
-                                            </option>
-                                        </select>
+                                        <v-select
+                                        v-model="rol_id_edit"
+                                        :items="roles"
+                                        item-text="rol"
+                                        item-value="id"
+                                        label="Rol*"
+                                        required
+                                      ></v-select>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error_edit}}
@@ -313,7 +317,7 @@ export default {
                 }).then((response) => {
                     if (response.status == 200) {
                         this.index();
-                        // this.dialog = false;
+                        this.dialog = false;
                         // this.error='';
                         this.$swal('Usuario creado con exito', '', 'OK');
                         this.name = "";

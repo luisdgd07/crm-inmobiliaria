@@ -16,11 +16,11 @@
 
             <v-data-table :headers="headers"  no-results-text="No hay resultados" no-data-text="No hay propiedades " :items="properties" item-key="propeties-user" class="elevation-1" :search="search">
                 <template v-slot:item.imagen="{ item }">
-                    <v-img :src="'../'+item.image" height="100" width="100"></v-img>  
+                    <v-img :src="'../'+item.image" height="100" width="100"></v-img>
                 </template>
                 <template v-slot:top>
                     <v-toolbar flat>
-                    <v-text-field v-model="search" label="Buscar" class="mt-3"></v-text-field>
+                    <v-text-field  clearable v-model="search" label="Buscar" class="mt-3"></v-text-field>
                     <v-spacer></v-spacer>
             <v-btn @click="exportPDF()" color="#E53935" dark>Pdf <v-icon>mdi-file-pdf</v-icon></v-btn>
 
@@ -78,13 +78,13 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Titulo" v-model="title" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Titulo" v-model="title" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Dimensiones" v-model="dimension"></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dimensiones" v-model="dimension"></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Precio" v-model="price" persistent-hint required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Precio" v-model="price" persistent-hint required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                         <v-select
@@ -97,7 +97,7 @@
                                         ></v-select>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Información de la propiedad" v-model="information" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="information" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                         <v-select
@@ -135,13 +135,13 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Titulo" v-model="title_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Titulo" v-model="title_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Dimensiones" v-model="dimension_edit"></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dimensiones" v-model="dimension_edit"></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Precio" v-model="price_edit" persistent-hint required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Precio" v-model="price_edit" persistent-hint required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                          <v-select
@@ -155,7 +155,7 @@
 
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Información de la propiedad" v-model="information_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="information_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                         <v-select

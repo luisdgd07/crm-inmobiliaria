@@ -5,8 +5,8 @@
               width="500"
             >
             <template v-slot:activator="{ on, attrs }">
-                <v-btn 
-                    color="#66BB6A" 
+                <v-btn
+                    color="#66BB6A"
                     v-bind="attrs"
                     v-on="on"
                     >
@@ -27,7 +27,7 @@
                         cols="12"
                         sm="12"
                       >
-                        <v-text-field
+                        <v-text-field outlined shaped clearable
                           v-model="newNote.title"
                           label="Titulo de Nota"
                         ></v-text-field>
@@ -36,7 +36,7 @@
                         cols="12"
                         sm="12"
                       >
-                        <v-text-field
+                        <v-text-field outlined shaped clearable
                           v-model="newNote.description"
                           label="Descripcion de Nota"
                         ></v-text-field>
@@ -48,7 +48,7 @@
                         <v-btn color="blue darken-1" text @click="saveNote(element.id)">Guardar</v-btn>
                         <v-spacer></v-spacer>
                     </v-card-actions>
-                       
+
                     </v-row>
                   </v-container>
                 </v-card-text>
@@ -61,8 +61,8 @@
               width="500"
             >
             <template v-slot:activator="{ on, attrs }">
-                <v-btn 
-                    color="#66BB6A" 
+                <v-btn
+                    color="#66BB6A"
                     v-bind="attrs"
                     v-on="on"
                     @click="history()"
@@ -81,9 +81,9 @@
                 <v-card-text>
                   <ul>
                     <li>Creado el {{element.created_at}}</li>
-                    <li v-for="item in list" :key="item.note_id"> 
-                        Nota:{{item.title}} <br> 
-                         &nbsp;&nbsp;&nbsp;&nbsp;{{item.description}} <br> 
+                    <li v-for="item in list" :key="item.note_id">
+                        Nota:{{item.title}} <br>
+                         &nbsp;&nbsp;&nbsp;&nbsp;{{item.description}} <br>
                          &nbsp;&nbsp;&nbsp;&nbsp;Creada el {{item.created_at}} </li>
                     <li v-if="element.closed">Cerrada el {{element.deleted_at}} por</li>
                   </ul>
@@ -111,7 +111,7 @@ export default {
           description: this.newNote.title,
           oportunity_id: id,
         };
-           
+
         axios.post('/api-notes', params).then((response) =>{
           this.noteDialog = false;
           console.log(response);

@@ -1,8 +1,8 @@
 <template>
   <v-card color="blue">
-  
-    <new-oportunity 
-    :status="status" 
+
+    <new-oportunity
+    :status="status"
      @updateData="changeUser()"></new-oportunity>
 
     <v-data-table
@@ -110,7 +110,7 @@
                           sm="12"
                         >
 
-                        <v-text-field
+                        <v-text-field outlined shaped clearable
                           v-model="emailText.asunto"
                           label="Asunto"
                         ></v-text-field>
@@ -367,7 +367,7 @@
           </div>
 
         </v-toolbar>
-        <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+        <v-text-field  clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
 
       </template>
 
@@ -549,7 +549,7 @@
         if (this.userSelected.length !== 0) {
           axios.get('/api-oportunities/' + this.userSelected).then((response) => {
             console.log('Buscando las oporunidades de el usuario id='+ this.userSelected);
-  
+
             this.datas = response.data.oportunities;
             this.datas.forEach(element => {
               if (element.closed =="1") {

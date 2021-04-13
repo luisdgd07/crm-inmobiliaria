@@ -2,11 +2,17 @@
     <div class="">
         <v-card color="light-blue darken-2">
             <v-card-title >
-                <v-btn dark icon>
-                    <v-icon>mdi-dots-vertical</v-icon>
-                </v-btn>
 
+                    <v-icon dark>mdi-account</v-icon>
                     <div class="white--text">Mi perfil</div>
+                    <v-spacer></v-spacer>
+                    <v-btn dark icon @click="edit(profile.name,profile.email,profile.phone,profile.pronvince,profile.direction)">
+                        <v-icon>mdi-pencil</v-icon>
+                    </v-btn>
+                    <v-btn dark icon @click="modalpass()">
+                        <v-icon>mdi-account-key</v-icon>
+                    </v-btn>
+
             </v-card-title>
 
             <v-list two-line class="pa-0">
@@ -44,21 +50,6 @@
                         <v-list-item-title> Dirección: {{profile.direction}}</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-divider inset></v-divider>
-
-                <v-list-item>
-                    <v-list-item-action>
-                        <v-btn color="#66BB6A" @click="edit(profile.name,profile.email,profile.phone,profile.pronvince,profile.direction)" class="text-white">
-                            Editar perfil
-                        </v-btn>
-
-                    </v-list-item-action>
-                    <v-list-item-action>
-                        <v-btn color="#66BB6A" @click="modalpass()" class="text-white">
-                            Cambiar contraseña
-                        </v-btn>
-                    </v-list-item-action>
-                </v-list-item>
             </v-list>
         </v-card>
         <template>
@@ -73,19 +64,19 @@
                                 <v-layout wrap>
 
                                     <v-flex xs6>
-                                        <v-text-field label="Nombre*" v-model="name_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Nombre*" v-model="name_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs6>
-                                        <v-text-field label="Correo*" v-model="email_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Correo*" v-model="email_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs6>
-                                        <v-text-field label="Teléfono*" v-model="phone_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Teléfono*" v-model="phone_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs6>
-                                        <v-text-field label="Provincia*" v-model="province_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Provincia*" v-model="province_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
-                                        <v-text-field label="Dirección*" v-model="direction_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dirección*" v-model="direction_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error}}
@@ -113,10 +104,10 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs6>
-                                        <v-text-field type="password" label="Contraseña nueva*" v-model="passnew" required></v-text-field>
+                                        <v-text-field outlined shaped clearable type="password" label="Contraseña nueva*" v-model="passnew" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs6>
-                                        <v-text-field type="password" label="Confirmar nueva contraseña*" v-model="cpassnew" required></v-text-field>
+                                        <v-text-field outlined shaped clearable type="password" label="Confirmar nueva contraseña*" v-model="cpassnew" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs6>
                                         {{error_edit}}

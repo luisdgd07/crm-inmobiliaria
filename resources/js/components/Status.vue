@@ -15,7 +15,7 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12>
-                                        <v-text-field label="Nombre" v-model="name" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Nombre" v-model="name" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error}}
@@ -34,7 +34,7 @@
         </template>
         <v-data-table :headers="headers"  no-results-text="No hay resultados" no-data-text="No hay datos disponibles" :items="status"  class="elevation-1" :search="search">
             <template v-slot:top>
-                <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+                <v-text-field  clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
             </template>
             <template>
                 <tr>
@@ -72,7 +72,7 @@
                                 <v-layout wrap>
 
                                     <v-flex xs12>
-                                        <v-text-field label="Información de la propiedad" v-model="name_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="name_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error}}

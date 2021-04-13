@@ -5,9 +5,9 @@
             <v-icon>mdi-chevron-left-circle-outline</v-icon>
         </v-btn>
         <span class="display-1">
-            Regresar a propiedades 
+            Regresar a propiedades
         </span>
-            
+
         </v-card>
         <v-card
         class="mx-auto
@@ -78,13 +78,13 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Titulo" v-model="title_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Titulo" v-model="title_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Dimensiones" v-model="dimension_edit"></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dimensiones" v-model="dimension_edit"></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Precio" v-model="price_edit" persistent-hint required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Precio" v-model="price_edit" persistent-hint required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                         <select class="form-control mt-2" placeholder="Estado" @click="prueba()" v-model="currency_id_edit">
@@ -97,7 +97,7 @@
 
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
-                                        <v-text-field label="Información de la propiedad" v-model="information_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="information_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md6>
                                         <select class="form-control mt-2" placeholder="Estado" v-model="status_id_edit" required>
@@ -170,7 +170,7 @@
                     </v-btn>
                     <v-btn color="warning" small class="m-3"  v-else @click="setimage(item.url_image)">
                             Seleccionar como principal
-                    </v-btn>        
+                    </v-btn>
                     <v-img :src="'../'+item.url_image" ></v-img>
 
                     <v-card-actions>

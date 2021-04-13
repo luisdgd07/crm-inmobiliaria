@@ -9,7 +9,7 @@
                 </template>
                 <template v-slot:top>
                     <v-toolbar flat>
-                        <v-text-field v-model="search" label="Buscar" class="mt-3"></v-text-field>
+                        <v-text-field clearable v-model="search" label="Buscar" class="mt-3"></v-text-field>
                         <v-spacer></v-spacer>
                         <v-btn color="#E53935" class="m-1" @click="exportPDF()" dark>PDF
                                 <v-icon>mdi-file-pdf</v-icon>

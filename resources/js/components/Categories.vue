@@ -14,16 +14,16 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Titulo" v-model="title" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Titulo" v-model="title" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Dimensiones" v-model="dimension"></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dimensiones" v-model="dimension"></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Precio" v-model="price" persistent-hint required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Precio" v-model="price" persistent-hint required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
-                                        <v-text-field label="Información de la propiedad" v-model="information" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="information" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error}}
@@ -42,7 +42,7 @@
         </template>
         <v-data-table :headers="headers" :items="properties" no-results-text="No hay resultados" no-data-text="No hay propiedades" item-key="name" class="elevation-1" :search="search">
             <template v-slot:top>
-                <v-text-field v-model="search" label="Buscar" class="mx-4"></v-text-field>
+                <v-text-field outlined shaped clearable v-model="search" label="Buscar" class="mx-4"></v-text-field>
             </template>
             <template>
                 <tr>
@@ -79,16 +79,16 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Titulo" v-model="title_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Titulo" v-model="title_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Dimensiones" v-model="dimension_edit"></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Dimensiones" v-model="dimension_edit"></v-text-field>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4>
-                                        <v-text-field label="Precio" v-model="price_edit"  required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Precio" v-model="price_edit"  required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
-                                        <v-text-field label="Información de la propiedad" v-model="information_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Información de la propiedad" v-model="information_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
                                         {{error}}

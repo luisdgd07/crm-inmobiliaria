@@ -3,7 +3,7 @@
       v-model="dialog"
       persistent
       max-width="600px"
-      
+
     >
       <template v-slot:activator="{ on, attrs }">
             <v-card-title class="display-1 text-white p-6">Nueva Oportunidad
@@ -29,17 +29,17 @@
         <v-card-text>
           <v-container>
             <v-row>
-            
+
               <v-col
                 cols="12"
                 sm="6"
                 class="py-0"
               >
-              <v-text-field
+              <v-text-field outlined shaped clearable
                   v-model="oportunity.name"
                   label="Nombre de la oportunidad*"
                   required
-                ></v-text-field>    
+                ></v-text-field>
                 <v-select
                   v-model="oportunity.contact_id"
                   :items="contacts"
@@ -148,7 +148,7 @@
                 name: this.oportunity.name,
                 vigency: this.oportunity.vigency,
                 contact_id: this.oportunity.contact_id,
-                status_id: this.oportunity.status_id 
+                status_id: this.oportunity.status_id
             }
 
             axios.post('/api-oportunities/', newOportunity).then((response) => {
@@ -157,7 +157,7 @@
               setTimeout(() => this.dialog = false, 2000);
               this.$emit('updateData');
             });
-           
+
             this.oportunity= [];
         },
     }

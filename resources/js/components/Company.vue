@@ -37,10 +37,10 @@
                                 <v-layout wrap>
 
                                     <v-flex xs12>
-                                        <v-text-field label="Moneda" v-model="name_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Moneda" v-model="name_edit" required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
-                                        <v-text-field label="Moneda" v-model="info_edit" required></v-text-field>
+                                        <v-text-field outlined shaped clearable label="Moneda" v-model="info_edit" required></v-text-field>
                                     </v-flex>
 
                                 </v-layout>
