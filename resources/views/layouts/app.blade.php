@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="h-full">
 
         <main class="fondo">
             <v-app class="fondo">
@@ -38,6 +38,7 @@
 <style>
     html{
         background-color:#CFD8DC;
+        size: 1vmax
     }
     .form-control2 {
   display: block;

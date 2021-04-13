@@ -1,33 +1,65 @@
 <template>
     <div class="">
-        <v-card class="mx-auto">
-
-            <v-card-text>
-                <p class="display-1 text--primary">
-                    Nombre: {{profile.name}}
-                </p>
-                <div class="text--primary">
-                    Correo: {{profile.email}}
-                </div>
-                <div class="text--primary">
-                    Telefono:{{profile.phone}}
-                </div>
-                <div class="text--primary">
-                    Provincia: {{profile.pronvince}}
-                </div>
-                <div class="text--primary">
-                    Dirección: {{profile.direction}}
-                </div>
-
-            </v-card-text>
-            <v-card-actions>
-                <v-btn color="#66BB6A" @click="edit(profile.name,profile.email,profile.phone,profile.pronvince,profile.direction)" class="text-white">
-                    Editar perfil
+        <v-card color="light-blue darken-2">
+            <v-card-title >
+                <v-btn dark icon>
+                    <v-icon>mdi-dots-vertical</v-icon>
                 </v-btn>
-                <v-btn color="#66BB6A" @click="modalpass()" class="text-white">
-                    Cambiar contraseña
-                </v-btn>
-            </v-card-actions>
+
+                    <div class="white--text">Mi perfil</div>
+            </v-card-title>
+
+            <v-list two-line class="pa-0">
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-icon color="indigo">mdi-account-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>{{profile.name}}</v-list-item-title>
+                    </v-list-item-content>
+
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-icon color="indigo">mdi-phone</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>{{profile.phone}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-icon color="indigo">mdi-mail</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title> {{profile.email}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-icon color="indigo">mdi-google-maps</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        Provincia: {{profile.pronvince}}
+                        <v-list-item-title> Dirección: {{profile.direction}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-divider inset></v-divider>
+
+                <v-list-item>
+                    <v-list-item-action>
+                        <v-btn color="#66BB6A" @click="edit(profile.name,profile.email,profile.phone,profile.pronvince,profile.direction)" class="text-white">
+                            Editar perfil
+                        </v-btn>
+
+                    </v-list-item-action>
+                    <v-list-item-action>
+                        <v-btn color="#66BB6A" @click="modalpass()" class="text-white">
+                            Cambiar contraseña
+                        </v-btn>
+                    </v-list-item-action>
+                </v-list-item>
+            </v-list>
         </v-card>
         <template>
             <v-layout row justify-center>
@@ -101,6 +133,7 @@
                 </v-dialog>
             </v-layout>
         </template>
+
     </div>
 </template>
 

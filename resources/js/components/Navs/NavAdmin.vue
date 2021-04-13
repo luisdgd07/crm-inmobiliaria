@@ -28,35 +28,35 @@
 
             <v-list nav dense>
 
-                <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
-                    <v-list-item>
-                        <a href="/">Pagina web</a>
+                <v-list-item-group v-model="group" active-class="light-blue darken-4 text-white" style="text-decoration:none">
+                    <v-list-item href="/">
+                        Pagina web
                     </v-list-item>
-                    <v-list-item>
-                        <a href="/users">Usuarios</a>
-                    </v-list-item>
-
-                    <v-list-item>
-                        <a href="/currency">Monedas</a>
-                    </v-list-item>
-                    <v-list-item>
-                        <a href="/properties-user">Propiedades</a>
-                    </v-list-item>
-                    <v-list-item>
-                        <a href="/status">Estatus de propiedades</a>
-                    </v-list-item>
-                    <v-list-item>
-                        <a href="/interested">Interesados de compra</a>
+                    <v-list-item href="/users">
+                        Usuarios
                     </v-list-item>
 
-                    <v-list-item>
-                        <a href="/profile">Mi perfil</a>
+                    <v-list-item href="/currency">
+                        Monedas
                     </v-list-item>
-                    <v-list-item>
-                        <a href="/home">Estaditicas</a>
+                    <v-list-item href="/properties-user">
+                        Propiedades
                     </v-list-item>
-                    <v-list-item>
-                        <a href="/reports">Historial de operaciones</a>
+                    <v-list-item href="/status">
+                        Estatus de propiedades
+                    </v-list-item>
+                    <v-list-item href="/interested">
+                        Interesados de compra
+                    </v-list-item>
+
+                    <v-list-item href="/profile">
+                        <a>Mi perfil</a>
+                    </v-list-item>
+                    <v-list-item href="/home">
+                        Estaditicas
+                    </v-list-item>
+                    <v-list-item href="/reports">
+                        Historial de operaciones
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
@@ -66,16 +66,16 @@
 </template>
 
 <style scoped>
-    .v-list-item a:hover{
-        text-decoration: none;
-    }
+.v-list-item:hover {
+    text-decoration: none;
+}
 </style>
 
 <script>
 export default {
-    props:{
-            title:String,
-        },
+    props: {
+        title: String,
+    },
     data: () => ({
         drawer: false,
         group: null,
@@ -86,13 +86,13 @@ export default {
             this.drawer = false
         },
     },
-    methods:{
+    methods: {
         logout() {
             axios.post("/logout", {
 
             }).then((response) => {
                 if (response.status == 200) {
-                    window.location.href ="/"
+                    window.location.href = "/"
                 }
             });
         }
