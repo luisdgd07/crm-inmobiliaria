@@ -36,6 +36,7 @@ Auth::routes();
 
 Route::get('/api-properties-user', 'PropertyController@properties');
 Route::get('/profile', 'UserController@view');
+Route::get('/settings', 'SettingsController@view');
 Route::get('/reports', 'ReportController@view');
 Route::get('/api-properties-admin', 'PropertyController@propertiesAdmin');
 Route::get('/home', 'HomeController@index')->name('home');

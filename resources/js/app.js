@@ -38,18 +38,16 @@ Vue.component('properties', require('./components/Properties.vue').default);
 Vue.component('property', require('./components/Property.vue').default);
 Vue.component('profile', require('./components/Profile.vue').default);
 Vue.component('users', require('./components/Users.vue').default);
-Vue.component('company', require('./components/Company.vue').default);
 Vue.component('image-propertie', require('./components/ImagesProperty.vue').default);
 Vue.component('nav-guest', require('./components/Navs/NavGuest.vue').default);
 Vue.component('nav-admin', require('./components/Navs/NavAdmin.vue').default);
 Vue.component('nav-user', require('./components/Navs/NavUser.vue').default);
 Vue.component('nav-agent', require('./components/Navs/NavAgent.vue').default);
-Vue.component('status', require('./components/Status.vue').default);
-Vue.component('currency', require('./components/Currency.vue').default);
 Vue.component('properties-user', require('./components/PropertiesUser.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
 Vue.component('categories', require('./components/Categories.vue').default);
 Vue.component('reports', require('./components/Reports.vue').default);
+Vue.component('settings', require('./components/Settings.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -4,7 +4,7 @@
             <v-card-title >
 
                     <v-icon dark>mdi-account</v-icon>
-                    <div class="white--text">Mi perfil</div>
+                    <div class="white--text">{{profile.name}}</div>
                     <v-spacer></v-spacer>
                     <v-btn dark icon @click="edit(profile.name,profile.email,profile.phone,profile.pronvince,profile.direction)">
                         <v-icon>mdi-pencil</v-icon>
@@ -16,15 +16,6 @@
             </v-card-title>
 
             <v-list two-line class="pa-0">
-                <v-list-item>
-                    <v-list-item-action>
-                        <v-icon color="indigo">mdi-account-circle</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>{{profile.name}}</v-list-item-title>
-                    </v-list-item-content>
-
-                </v-list-item>
                 <v-list-item>
                     <v-list-item-action>
                         <v-icon color="indigo">mdi-phone</v-icon>

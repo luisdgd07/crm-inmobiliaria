@@ -32,18 +32,14 @@
                     <v-list-item href="/">
                         Pagina web
                     </v-list-item>
+                    <v-list-item href="/settings">
+                        Configuración
+                    </v-list-item>
                     <v-list-item href="/users">
                         Usuarios
                     </v-list-item>
-
-                    <v-list-item href="/currency">
-                        Monedas
-                    </v-list-item>
                     <v-list-item href="/properties-user">
                         Propiedades
-                    </v-list-item>
-                    <v-list-item href="/status">
-                        Estatus de propiedades
                     </v-list-item>
                     <v-list-item href="/interested">
                         Interesados de compra

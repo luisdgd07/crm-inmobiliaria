@@ -13,19 +13,19 @@
                                     <v-container grid-list-md>
                                         <v-layout wrap>
                                             <v-flex xs12 sm6 md6>
-                                                <v-text-field :rules="[() => !!name || 'Este campo es requerido']" outlined shaped clearable label="Nombre*" v-model="name" required></v-text-field>
+                                                <v-text-field |outlined shaped clearable label="Nombre*" v-model="name" required></v-text-field>
                                             </v-flex>
                                             <v-flex xs12 sm6 md6>
-                                                <v-text-field :rules="[() => !!email || 'Este campo es requerido']" outlined shaped clearable label="Correo*" v-model="email" required></v-text-field>
+                                                <v-text-field  outlined shaped clearable label="Correo*" v-model="email" required></v-text-field>
                                             </v-flex>
                                             <v-flex xs12 sm6 md6 >
-                                                <v-text-field :rules="[() => !!phone || 'Este campo es requerido']" outlined shaped clearable label="Telefono" v-model="phone" required></v-text-field>
+                                                <v-text-field  outlined shaped clearable label="Telefono" v-model="phone" required></v-text-field>
                                             </v-flex>
                                             <v-flex xs12 sm6 md6 >
-                                                <v-text-field :rules="[() => !!province || 'Este campo es requerido']" outlined shaped clearable label="Provincia" v-model="province" required></v-text-field>
+                                                <v-text-field  outlined shaped clearable label="Provincia" v-model="province" required></v-text-field>
                                             </v-flex>
                                             <v-flex xs12 sm6 md6 >
-                                                <v-text-field :rules="[() => !!name || 'Este campo es requerido']" outlined shaped clearable label="Dirección" v-model="direction" required></v-text-field>
+                                                <v-text-field outlined shaped clearable label="Dirección" v-model="direction" required></v-text-field>
                                             </v-flex>
 
                                             <v-flex xs12 sm6 md6>

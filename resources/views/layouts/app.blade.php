@@ -15,17 +15,17 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
          {{-- <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
-    <div id="app" class="h-full">
+    <div id="app" >
 
         <main class="fondo">
             <v-app class="fondo">
-                <div class="h-full" style="background-color:#ECEFF1;min-height: 100%;" >
+                <div class="h-full" style="background-color:#ECEFF1" >
                 @yield('content')
 
                 </div>
@@ -38,20 +38,7 @@
 <style>
     html{
         background-color:#CFD8DC;
-        size: 1vmax
     }
-    .form-control2 {
-  display: block;
-  width: 100%;
-  height: calc(1.6em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-}
     </style>
 
 </html>
